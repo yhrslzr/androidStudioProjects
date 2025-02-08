@@ -34,6 +34,10 @@ fun VistaCajitaTextito() {
         mutableStateOf("")
     }
 
+    var respuesta by remember {
+        mutableStateOf(0)
+    }
+
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -60,13 +64,13 @@ fun VistaCajitaTextito() {
             onValueChange = { textoIngresado ->
                 secondNumber = textoIngresado
             }
-
-
         )
 
         Button(
             onClick = {
-            }, modifier = Modifier
+                respuesta = firstNumber.toInt() + secondNumber.toInt()
+            },
+            modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp),
             colors = ButtonDefaults.buttonColors(
@@ -75,9 +79,14 @@ fun VistaCajitaTextito() {
             )
         )
 
-        {
-            //contenido
-            Text(text = "Calcular")
-        }
+        { Text(text = "Calcular") }
+
+        TextField(value = respuesta.toString(),
+            readOnly = true,
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+            placeholder = { Text(text = respuesta.toString()) },
+            onValueChange = {}
+        )
+
     }
 }
