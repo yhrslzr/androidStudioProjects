@@ -1,4 +1,4 @@
-package com.yso.holamundito
+package com.yso.holamundito.componentes
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -16,6 +16,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.yso.holamundito.R
 
 @Preview(showBackground = true)
 @Composable
@@ -82,6 +83,13 @@ fun VistaCajitaFeliz() {
             imageVector = Icons.Default.AddComment,
             contentDescription = "ícono",
             tint = Color.Magenta
+        )
+
+        Icon(
+            painter = painterResource(id = R.drawable.baseline_ac_unit_24),
+            contentDescription = "icono",
+            modifier = Modifier.align(Alignment.BottomCenter),
+            tint = Color.Unspecified
         )
 
     }

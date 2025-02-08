@@ -1,4 +1,4 @@
-package com.yso.holamundito
+package com.yso.holamundito.componentes
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
