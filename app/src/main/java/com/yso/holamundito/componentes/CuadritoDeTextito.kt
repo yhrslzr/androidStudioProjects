@@ -74,8 +74,8 @@ fun VistaCajitaTextito() {
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp),
             colors = ButtonDefaults.buttonColors(
-                containerColor = Color(0xE6E4007C),
-                contentColor = Color.Black
+                containerColor = Color(0xE68D0000),
+                contentColor = Color.White
             )
         )
 
