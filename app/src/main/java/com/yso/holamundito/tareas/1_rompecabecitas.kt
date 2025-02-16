@@ -18,7 +18,7 @@ import androidx.compose.ui.unit.dp
 
 @Preview(showBackground = true)
 @Composable
-fun Juego() {
+fun VistaRompecabecitas() {
 
     Column(
         modifier = Modifier
@@ -30,40 +30,44 @@ fun Juego() {
 
         Row {
             Text(
-                text = "1", color = Color.Blue,
+                text = "1",
+                color = Color(0xFF3B0BE7),
                 textAlign = TextAlign.Center,
                 modifier = Modifier
-                    .background(color = Color.Cyan)
+                    .background(color = Color(0xFF0BE7AE))
                     .size(47.dp)
             )
             Spacer(modifier = Modifier.width(3.dp))
 
 
             Text(
-                text = "2", color = Color.Cyan,
+                text = "2",
+                color = Color(0xFF0BE7AE),
                 textAlign = TextAlign.Center,
                 modifier = Modifier
-                    .background(color = Color.Blue)
+                    .background(color = Color(0xFF3B0BE7))
                     .size(47.dp)
             )
             Spacer(modifier = Modifier.width(3.dp))
 
 
             Text(
-                text = "3", color = Color.Blue,
+                text = "3",
+                color = Color(0xFF3B0BE7),
                 textAlign = TextAlign.Center,
                 modifier = Modifier
-                    .background(color = Color.Cyan)
+                    .background(color = Color(0xFF0BE7AE))
                     .size(47.dp)
             )
             Spacer(modifier = Modifier.width(3.dp))
 
 
             Text(
-                text = "4", color = Color.Cyan,
+                text = "4",
+                color = Color(0xFF0BE7AE),
                 textAlign = TextAlign.Center,
                 modifier = Modifier
-                    .background(color = Color.Blue)
+                    .background(color = Color(0xFF3B0BE7))
                     .size(47.dp)
             )
         }
@@ -71,39 +75,43 @@ fun Juego() {
 
         Row {
             Text(
-                text = "5", color = Color.Cyan,
+                text = "5",
+                color = Color(0xFF0BE7AE),
                 textAlign = TextAlign.Center,
                 modifier = Modifier
-                    .background(color = Color.Blue)
+                    .background(color = Color(0xFF3B0BE7))
                     .size(47.dp)
             )
             Spacer(modifier = Modifier.width(3.dp))
 
 
             Text(
-                text = "6", color = Color.Blue,
+                text = "6",
+                color = Color(0xFF3B0BE7),
                 textAlign = TextAlign.Center,
                 modifier = Modifier
-                    .background(color = Color.Cyan)
+                    .background(color = Color(0xFF0BE7AE))
                     .size(47.dp)
             )
             Spacer(modifier = Modifier.width(3.dp))
 
 
             Text(
-                text = "7", color = Color.Cyan,
+                text = "7",
+                color = Color(0xFF0BE7AE),
                 textAlign = TextAlign.Center,
                 modifier = Modifier
-                    .background(color = Color.Blue)
+                    .background(color = Color(0xFF3B0BE7))
                     .size(47.dp)
             )
             Spacer(modifier = Modifier.width(3.dp))
 
             Text(
-                text = "8", color = Color.Blue,
+                text = "8",
+                color = Color(0xFF3B0BE7),
                 textAlign = TextAlign.Center,
                 modifier = Modifier
-                    .background(color = Color.Cyan)
+                    .background(color = Color(0xFF0BE7AE))
                     .size(47.dp)
             )
         }
@@ -112,83 +120,91 @@ fun Juego() {
 
         Row {
             Text(
-                text = "9", color = Color.Blue,
+                text = "9",
+                color = Color(0xFF3B0BE7),
                 textAlign = TextAlign.Center,
                 modifier = Modifier
-                    .background(color = Color.Cyan)
+                    .background(color = Color(0xFF0BE7AE))
                     .size(47.dp)
             )
             Spacer(modifier = Modifier.width(3.dp))
 
 
             Text(
-                text = "10", color = Color.Cyan,
+                text = "10",
+                color = Color(0xFF0BE7AE),
                 textAlign = TextAlign.Center,
                 modifier = Modifier
-                    .background(color = Color.Blue)
+                    .background(color = Color(0xFF3B0BE7))
                     .size(47.dp)
             )
             Spacer(modifier = Modifier.width(3.dp))
 
 
             Text(
-                text = "11", color = Color.Blue,
+                text = "11",
+                color = Color(0xFF3B0BE7),
                 textAlign = TextAlign.Center,
                 modifier = Modifier
-                    .background(color = Color.Cyan)
+                    .background(color = Color(0xFF0BE7AE))
                     .size(47.dp)
             )
             Spacer(modifier = Modifier.width(3.dp))
 
 
             Text(
-                text = "12", color = Color.Cyan,
+                text = "12",
+                color = Color(0xFF0BE7AE),
                 textAlign = TextAlign.Center,
                 modifier = Modifier
-                    .background(color = Color.Blue)
+                    .background(color = Color(0xFF3B0BE7))
                     .size(47.dp)
             )
             Spacer(modifier = Modifier.width(3.dp))
 
         }
+
         Spacer(modifier = Modifier.height(3.dp))
 
         Row {
             Text(
-                text = "13", color = Color.Cyan,
+                text = "13",
+                color = Color(0xFF0BE7AE),
                 textAlign = TextAlign.Center,
                 modifier = Modifier
-                    .background(color = Color.Blue)
+                    .background(color = Color(0xFF3B0BE7))
                     .size(47.dp)
             )
             Spacer(modifier = Modifier.width(3.dp))
 
 
             Text(
-                text = "14", color = Color.Blue,
+                text = "14",
+                color = Color(0xFF3B0BE7),
                 textAlign = TextAlign.Center,
                 modifier = Modifier
-                    .background(color = Color.Cyan)
+                    .background(color = Color(0xFF0BE7AE))
                     .size(47.dp)
             )
             Spacer(modifier = Modifier.width(3.dp))
 
 
             Text(
-                text = "15", color = Color.Cyan,
+                text = "15",
+                color = Color(0xFF0BE7AE),
                 textAlign = TextAlign.Center,
                 modifier = Modifier
-                    .background(color = Color.Blue)
+                    .background(color = Color(0xFF3B0BE7))
                     .size(47.dp)
             )
             Spacer(modifier = Modifier.width(3.dp))
 
-
             Text(
-                text = " ", color = Color.Blue,
+                text = " ",
+                color = Color(0xFF3B0BE7),
                 textAlign = TextAlign.Center,
                 modifier = Modifier
-                    .background(color = Color.Cyan)
+                    .background(color = Color(0xFF0BE7AE))
                     .size(47.dp)
             )
         }

@@ -1,3 +1,5 @@
+package com.yso.holamundito.actividades
+
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -16,7 +18,7 @@ import androidx.compose.ui.unit.dp
 
 @Preview(showBackground = true)
 @Composable
-fun Posiciones() {
+fun VistaPosicionitas() {
     Column(
         modifier = Modifier
             .background(color = Color.Black)
@@ -63,6 +65,7 @@ fun Posiciones() {
                 )
             }
         }
+
         Row {
             Box(
                 modifier = Modifier

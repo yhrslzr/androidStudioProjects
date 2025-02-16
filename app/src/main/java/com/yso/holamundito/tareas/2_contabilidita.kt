@@ -28,7 +28,7 @@ import com.yso.holamundito.R
 
 @Preview(showBackground = true)
 @Composable
-fun Tarea2() {
+fun VistaContabilidita() {
     val n1Ingresos = 2000
     val n1Egresos = 500
     val n2Ingresos = 2000
@@ -556,9 +556,10 @@ fun Tarea2() {
                 resultado12 = (n12Ingresos - n12Egresos).toString()
             },
             modifier = Modifier.fillMaxWidth()
-        ) {
-            Text(text = "Resultados")
-        }
+        )
+
+        { Text(text = "Resultados") }
+
     }
 
 }
