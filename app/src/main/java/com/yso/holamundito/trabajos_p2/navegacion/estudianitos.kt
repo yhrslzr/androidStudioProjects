@@ -1,4 +1,4 @@
-package com.yso.holamundito.navegacion
+package com.yso.holamundito.trabajos_p2.navegacion
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
