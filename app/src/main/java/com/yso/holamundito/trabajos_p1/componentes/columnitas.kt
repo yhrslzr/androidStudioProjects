@@ -1,4 +1,4 @@
-package com.yso.holamundito.componentes
+package com.yso.holamundito.trabajos_p1.componentes
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -63,7 +63,7 @@ fun VistaColumnitas() {
 
 @Preview(showBackground = true)
 @Composable
-fun columnasDivorce() {
+fun ColumnasDivorce() {
     Column(modifier = Modifier.fillMaxSize()) {
         Text(text = "1")
         Spacer(modifier = Modifier.height(16.dp))

@@ -1,4 +1,4 @@
-package com.yso.holamundito
+package com.yso.holamundito.trabajos_p1
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -6,8 +6,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import com.yso.holamundito.compartido.VistaTarjetita
-import com.yso.holamundito.compartido.VistaTerminalita
+import com.yso.holamundito.trabajos_p1.compartidos.VistaTarjetita
+import com.yso.holamundito.trabajos_p1.compartidos.VistaTerminalita
 
 @Preview(showBackground = true)
 @Composable

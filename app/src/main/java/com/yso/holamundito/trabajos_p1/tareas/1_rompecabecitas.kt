@@ -1,4 +1,4 @@
-package com.yso.holamundito.tareas
+package com.yso.holamundito.trabajos_p1.tareas.tareas
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
