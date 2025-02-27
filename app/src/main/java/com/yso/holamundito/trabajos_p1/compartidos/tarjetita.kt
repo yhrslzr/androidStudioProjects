@@ -1,4 +1,4 @@
-package com.yso.holamundito.compartido
+package com.yso.holamundito.trabajos_p1.compartidos
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row

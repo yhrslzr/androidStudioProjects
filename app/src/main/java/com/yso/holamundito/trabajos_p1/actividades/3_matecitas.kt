@@ -1,4 +1,4 @@
-package com.yso.holamundito.actividades
+package com.yso.holamundito.trabajos_p1.actividades
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image

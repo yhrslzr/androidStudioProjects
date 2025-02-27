@@ -1,4 +1,4 @@
-package com.yso.holamundito.componentes
+package com.yso.holamundito.trabajos_p1.componentes
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
