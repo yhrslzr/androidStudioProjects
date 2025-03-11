@@ -1,7 +1,8 @@
-package com.yso.holamundito.trabajos_p2.listado.models
+package com.yso.holamundito.trabajos_p2.listado.viewmodels
 
 import androidx.lifecycle.ViewModel
 import com.yso.holamundito.R
+import com.yso.holamundito.trabajos_p2.listado.models.ModeloProductito
 
 class ModeloVistaProductito : ViewModel() {
     // init {obtenerProductos()}

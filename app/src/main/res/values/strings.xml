@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">HolaMundito</string>
+    <string name="start_message">La Mejorcita Appcita del Mundito</string>
+    <string name="unknown" translatable="false">\???</string>
 </resources>
