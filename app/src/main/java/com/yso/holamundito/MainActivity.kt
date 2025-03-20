@@ -12,8 +12,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.yso.holamundito.trabajos_p2.listado.VistaSorteito
-import com.yso.holamundito.trabajos_p2.listado.viewmodels.ModeloVistaEstudiantito
+import com.yso.holamundito.trabajos_p2.navegacion.VistaNaveguita
 import com.yso.holamundito.ui.theme.HolaMunditoTheme
 
 class MainActivity : ComponentActivity() {
@@ -25,10 +24,7 @@ class MainActivity : ComponentActivity() {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     //VistaCajitaTextito()
                     Column(modifier = Modifier.padding(innerPadding)) {
-                        //VistaNaveguita()
-                        //VistaListaProductito()
-                        val modeloVistaEstudiantito = ModeloVistaEstudiantito()
-                        VistaSorteito(modeloVistaEstudiantito)
+                        VistaNaveguita()
                     }
                 }
             }
