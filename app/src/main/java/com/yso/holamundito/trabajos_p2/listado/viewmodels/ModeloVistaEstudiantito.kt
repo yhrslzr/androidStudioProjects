@@ -14,6 +14,7 @@ import kotlinx.coroutines.withContext
 
 class ModeloVistaEstudiantito : ViewModel() {
 
+
     var selectedEstudiantito by mutableStateOf("")
         private set
 
@@ -61,5 +62,4 @@ class ModeloVistaEstudiantito : ViewModel() {
         }
 
     }
-
 }
