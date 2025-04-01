@@ -2,9 +2,8 @@ package com.yso.holamundito.trabajos_p2.tareas.tarea4_guardadatitos
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Card
+import androidx.compose.foundation.layout.Row
+import androidx.compose.material3.Button
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Switch
@@ -19,103 +18,55 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
-import androidx.navigation.NavHostController
-import androidx.navigation.NavType
+import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import androidx.navigation.navArgument
 import kotlinx.coroutines.launch
-
-/*
-
-Segunda pantalla el listado de productos de comida o similar (6_listaProductito, 6_listita)
-,que se realizó en clase, tenga un floating action button el que mostrará las preferencias
-guardadas (puede ser en una tercer pantalla o en un AlertDialog)
-
-En la pantalla de listado muestre en la parte superior el dinero actual, conforme el usuario va
-comprando un artículo se vaya descontando.  El usuario no puede comprar más de lo que posee como
-Monedero en preferencias.
-*/
 
 @Preview(showBackground = true)
 @Composable
 fun NavGuardaditoInicioT() {
 
     val navController = rememberNavController()
+    val context = LocalContext.current
+    val preferencias = GuardaditosPreferencitas(context)
 
-    //startDestination: elige el primer composable para mostrarse
-    NavHost(
-        navController = navController,
-        startDestination = "inicio"
-    )
-    {
-        //Aquí los nombres de rutas y sus componentes/vista respectiva
-        composable(route = "inicio") {
-            VistaGuardaditoInicioT(navController)
+    // Configuración de las rutas para la navegación
+    NavHost(navController = navController, startDestination = "inicio") {
+        composable("inicio") {
+            VistaGuardaditoInicioT(navController, preferencias)
         }
-
-        composable(
-            route = "persona?nombre={nombre}",
-            arguments = listOf(
-                navArgument("nombre") {
-                    type = NavType.StringType
-                    defaultValue = ""
-                },
-
-                navArgument("edad") {
-                    type = NavType.IntType
-                    defaultValue = 0
-                },
-
-                navArgument("altura") {
-                    type = NavType.FloatType
-                    defaultValue = 0f
-                },
-
-                navArgument("dinero") {
-                    type = NavType.FloatType
-                    defaultValue = 0f
-                },
-
-                ) // termina lista de parámetros
-        )
-        { param ->
-            VistaGuardaditoListitaT()
+        composable("productitos") {
+            GuardaditoProducto(preferencias, navController)
         }
-
     }
 }
 
 @Composable
-fun VistaGuardaditoInicioT(navController: NavHostController) {
-    val context = LocalContext.current
-    val preferencias = guardaditosPreferencitas(context)
+fun VistaGuardaditoInicioT(navController: NavController, preferencias: GuardaditosPreferencitas) {
     val corrutina = rememberCoroutineScope()
 
     // leer en tiempo real los cambios en el archivo de preferencias
-    preferencias.age.collectAsState(initial = -1)
-    preferencias.name.collectAsState(initial = "---")
-    preferencias.height.collectAsState(initial = 0f)
-    preferencias.money.collectAsState(initial = 0f)
+    val savedName = preferencias.name.collectAsState(initial = "---")
+    val savedAge = preferencias.age.collectAsState(initial = -1)
+    val savedHeight = preferencias.height.collectAsState(initial = 0f)
+    val savedMoney = preferencias.money.collectAsState(initial = 0f)
     // END leer en...
 
     var name by remember { mutableStateOf("") }
-    var age by remember { mutableStateOf("0") }
-    var height by remember { mutableStateOf("0") }
-    var money by remember { mutableStateOf("0") }
+    var age by remember { mutableStateOf("") }
+    var height by remember { mutableStateOf("") }
+    var money by remember { mutableStateOf("") }
     var checked by remember { mutableStateOf(true) }
 
     Column(
-        modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text("Ingrese u información personal")
+        Text("Ingrese su información personal")
         TextField(
             value = name,
             onValueChange = { name = it },
@@ -127,13 +78,13 @@ fun VistaGuardaditoInicioT(navController: NavHostController) {
         TextField(
             value = height,
             onValueChange = { height = it },
-            label = { Text("Ingrese su Altura (cm)") })
+            label = { Text("Ingrese su Altura (m)") })
         TextField(
             value = money,
             onValueChange = { money = it },
-            label = { Text("Introduzca su Cantidad de Efectivo") })
+            label = { Text("Introduzca su Cantidad de Efectivo (+ centavos)") })
 
-        Card(modifier = Modifier.padding(16.dp)) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
             Text("Guardar en Preferencias")
 
             Switch(
@@ -153,17 +104,40 @@ fun VistaGuardaditoInicioT(navController: NavHostController) {
         FloatingActionButton(onClick = {
             if (checked) {
                 corrutina.launch {
+                    // Guardar todos los datos
                     preferencias.savePersonData(
                         name,
-                        age.toInt(),
-                        height.toFloat(),
-                        money.toFloat()
+                        age.toIntOrNull() ?: 0,
+                        height.toFloatOrNull() ?: 0f,
+                        money.toFloatOrNull() ?: 0f
                     )
                 }
             }
-            navController.navigate("persona?nombre={nombre}")
         }) {
-            Text("Acceder a la Tienda -->")
+            Text(text = "Guardar datos")
         }
+
+        Button(onClick = {
+            navController.navigate("productitos") // Navegar a la pantalla de productos
+        }) {
+            Text(text = "Ir a los Productos")
+        }
+
+        Button(onClick = {
+            corrutina.launch {
+                // Limpiar todos los datos guardados
+                preferencias.clearSession()
+            }
+        }) {
+            Text(text = "Limpiar datos")
+        }
+
+        // Mostrar datos guardados
+        Text(text = "Datos guardados:")
+        Text(text = "Nombre: ${savedName.value}")
+        Text(text = "Edad: ${savedAge.value}")
+        Text(text = "Altura: ${savedHeight.value} m")
+        Text(text = "Monedero: $${savedMoney.value}")
+
     }
 }

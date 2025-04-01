@@ -1,12 +1,12 @@
 package com.yso.holamundito.trabajos_p2.actividades.act6_listita
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.Text
@@ -18,67 +18,60 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.yso.holamundito.R
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 
 @Preview(showBackground = true)
 @Composable
-fun PrevistaListitaProducto() {
-    val productitoAct = ModeloListitaAct(
-        3,
-        "Fondue de Chocolate Meta Knight",
-        null,
-        900.55f,
-        false,
-        image = R.drawable.producto8fondue
-    )
-
-    VistaListitaProducto(productitoAct)
-
+fun VistaProductoListitaT() {
+    ListitaProducto(rememberNavController())
 }
 
 @Composable
-fun VistaListitaProducto(productitoAct: ModeloListitaAct) {
+fun ListitaProducto(navController: NavHostController) {
+
+    val modeloVistaProductoAct = ModeloVistaProductoAct()
+    val productitosAct = modeloVistaProductoAct.obtenerProductosAct()
 
     Card(modifier = Modifier.fillMaxWidth()) {
-        Row(modifier = Modifier.fillMaxWidth()) {
-            Image(
-                painter = painterResource(id = productitoAct.image),
-                contentDescription = "",
-                modifier = Modifier.size(64.dp),
-                contentScale = ContentScale.Crop
-            )
+        LazyColumn(modifier = Modifier.fillMaxWidth()) {
 
-            Column(modifier = Modifier.padding(start = 6.dp)) {
-                Text(text = productitoAct.name, fontSize = 18.sp)
-                Text(
-                    text = productitoAct.description ?: "Sin descripción",
-                    //agregar ?:
-                    fontSize = 10.sp,
-                    color = Color.Gray
-                )
-                Text("$${productitoAct.price} MXN")
+            items(productitosAct) { productitoAct ->
+                Card(modifier = Modifier.fillMaxWidth())
+                {
+                    Image(
+                        painter = painterResource(id = productitoAct.image),
+                        contentDescription = "",
+                        modifier = Modifier.size(64.dp),
+                        contentScale = ContentScale.Crop
+                    )
 
-
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.End
-                ) {
-
-                    if (productitoAct.descuento == true) {
+                    Column(modifier = Modifier.padding(start = 6.dp)) {
+                        Text(text = productitoAct.name, fontSize = 12.sp)
                         Text(
-                            "¡EN OFERTA!",
-                            color = Color.Red,
-                            fontSize = 12.sp,
-                            modifier = Modifier.padding(end = 6.dp),
+                            text = productitoAct.description ?: "Sin descripción",
+                            //agregar ?:
+                            fontSize = 10.sp,
+                            color = Color.Black
+                        )
+                        Text("$${productitoAct.price} MXN")
 
-                            )
-                    }
+                        if (productitoAct.descuento == true) {
+                            Text(
+                                "¡EN OFERTA!",
+                                color = Color.Red,
+                                fontSize = 12.sp,
+                                modifier = Modifier.padding(end = 6.dp),
 
-                    Button(onClick = {}) {
-                        Text("Comprar")
-                    }
+                                )
+                        }
+
+                        Button(onClick = {}) {
+                            Text("Comprar")
+                        }
                 }
             }
         }
     }
+}
 }
