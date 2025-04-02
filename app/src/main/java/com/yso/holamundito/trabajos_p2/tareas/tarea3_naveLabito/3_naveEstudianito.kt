@@ -138,8 +138,34 @@ fun VistaEstudianteLabito(nombre: String, id: Int, isISND: Boolean) {
 
                     if (isISND) {
                         Text("Estudiante $nombre. Autorizado para uso del Laboratorio")
+                        Image(
+                            painter = painterResource(id = R.drawable.young),
+                            contentDescription = "Es Bienvenido al Laboratorio",
+                            contentScale = ContentScale.Crop,
+                            modifier = Modifier
+                                .size(150.dp)
+                                .border(
+                                    BorderStroke(borderWidth, rainbowColorsBrush),
+                                    CircleShape
+                                )
+                                .padding(borderWidth)
+                                .clip(CircleShape)
+                        )
                     } else {
                         Text("Este Laboratorio es de Uso Exclusivo para la carrera ISND")
+                        Image(
+                            painter = painterResource(id = R.drawable.kirbyfire),
+                            contentDescription = "Acceso Denegado",
+                            contentScale = ContentScale.Crop,
+                            modifier = Modifier
+                                .size(150.dp)
+                                .border(
+                                    BorderStroke(borderWidth, rainbowColorsBrush),
+                                    CircleShape
+                                )
+                                .padding(borderWidth)
+                                .clip(CircleShape)
+                        )
                     }
 
                 }
@@ -147,15 +173,41 @@ fun VistaEstudianteLabito(nombre: String, id: Int, isISND: Boolean) {
 
 
             else -> {
-                Text("Eres una persona tercera edad. Ya puedes jubilarte :)")
-                Image(
-                    painter = painterResource(id = R.drawable.elderly),
-                    contentDescription = "Es una persona tercera edad"
-                )
+                if (isISND) {
+                    Text("Estudiante $nombre. Autorizado para uso del Laboratorio")
+                    Image(
+                        painter = painterResource(id = R.drawable.young),
+                        contentDescription = "Es Bienvenido al Laboratorio",
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier
+                            .size(150.dp)
+                            .border(
+                                BorderStroke(borderWidth, rainbowColorsBrush),
+                                CircleShape
+                            )
+                            .padding(borderWidth)
+                            .clip(CircleShape)
+                    )
+                } else {
+                    Text("Este Laboratorio es de Uso Exclusivo para la carrera ISND")
+                    Image(
+                        painter = painterResource(id = R.drawable.kirbyfire),
+                        contentDescription = "Acceso Denegado",
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier
+                            .size(150.dp)
+                            .border(
+                                BorderStroke(borderWidth, rainbowColorsBrush),
+                                CircleShape
+                            )
+                            .padding(borderWidth)
+                            .clip(CircleShape)
+                    )
+                }
             }
         }
 
-        Button(onClick = { navController.navigate("inicio") }) {
+        Button(onClick = { navController.navigate("labito") }) {
             Text("Regresar")
         }
 
