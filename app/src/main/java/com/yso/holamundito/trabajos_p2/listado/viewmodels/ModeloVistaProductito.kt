@@ -21,7 +21,7 @@ class ModeloVistaProductito : ViewModel() {
             name = "Sopa de Champiñon",
             description = "champisopa",
             price = 110.0f,
-            image = R.drawable.producto2sopa
+            image = R.drawable.producto1_2sopa
         )
 
         val productitoTres = ModeloProductito(
@@ -29,7 +29,7 @@ class ModeloVistaProductito : ViewModel() {
             name = "Pollo Teriyaki con Arroz Superestella",
             description = "teriyaki & arroz",
             price = 260.0f,
-            image = R.drawable.producto3platillo
+            image = R.drawable.producto1_3platillo
         )
 
         val productitoCuatro = ModeloProductito(
@@ -37,7 +37,7 @@ class ModeloVistaProductito : ViewModel() {
             name = "Pastel de la Princesa Peach",
             description = "pastel",
             price = 215.0f,
-            image = R.drawable.producto4pastel
+            image = R.drawable.producto1_4pastel
         )
 
         val productitoCinco = ModeloProductito(
@@ -45,7 +45,7 @@ class ModeloVistaProductito : ViewModel() {
             name = "Tiramisú de Bloque ?",
             description = "tiramisu",
             price = 180.0f,
-            image = R.drawable.producto5tiramisu
+            image = R.drawable.producto1_5tiramisu
         )
 
         val productitoSeis = ModeloProductito(
@@ -61,7 +61,7 @@ class ModeloVistaProductito : ViewModel() {
             name = "Bebida Lassi de Mango y Melón",
             description = "lassi",
             price = 95.0f,
-            image = R.drawable.producto7lassi
+            image = R.drawable.producto1_1lassi
         )
 
         val productitoOcho = ModeloProductito(
@@ -69,7 +69,7 @@ class ModeloVistaProductito : ViewModel() {
             name = "Fondue de Chocolate Meta Knight",
             description = "fondue",
             price = 200.0f,
-            image = R.drawable.producto8fondue
+            image = R.drawable.producto2_1fondue
         )
 
         val productitoNueve = ModeloProductito(
@@ -77,7 +77,7 @@ class ModeloVistaProductito : ViewModel() {
             name = "Jugo Tornado de Frutas",
             description = "jugo",
             price = 88.0f,
-            image = R.drawable.producto9jugo
+            image = R.drawable.producto2_2jugo
         )
 
         val productitoDiez = ModeloProductito(
@@ -85,7 +85,7 @@ class ModeloVistaProductito : ViewModel() {
             name = "Raspado Espumoso de Piña",
             description = "raspado",
             price = 92.0f,
-            image = R.drawable.producto10raspado
+            image = R.drawable.producto2_3raspado
         )
 
         var productitosLista = listOf<ModeloProductito>(

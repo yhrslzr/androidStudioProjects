@@ -29,7 +29,7 @@ fun PrevistaProductito() {
         "Fondue de Chocolate Meta Knight",
         null,
         900.55f,
-        image = R.drawable.producto8fondue
+        image = R.drawable.producto2_1fondue
     )
 
     VistaProductito(productito)

@@ -1,18 +1,18 @@
 package com.yso.holamundito.trabajos_p2.actividades.act6_listita
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
-import androidx.compose.material3.Card
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -34,8 +34,20 @@ fun NavCategoriasInicioT() {
         composable("inicio") {
             VistaCategoriasAct(navController)
         }
-        composable("productitos") {
-            ListitaProducto(navController)
+        composable("productitosUno") {
+            CategoriaUnoProductos(navController)
+        }
+        composable("productitosDos") {
+            CategoriaDosProductos(navController)
+        }
+        composable("productitosTres") {
+            CategoriaTresProductos(navController)
+        }
+        composable("productitosCuatro") {
+            CategoriaCuatroProductos(navController)
+        }
+        composable("productitosCinco") {
+            CategoriaCincoProductos(navController)
         }
     }
 }
@@ -46,27 +58,112 @@ fun VistaCategoriasAct(navController: NavController) {
     val modeloVistaCategoriaAct = ModeloVistaCategoriaAct()
     val categoriasAct = modeloVistaCategoriaAct.obtenerCategoriasAct()
 
-    Card(modifier = Modifier
-        .fillMaxWidth()
-        .height(50.dp)) {
+    Box(modifier = Modifier.fillMaxWidth()) {
         LazyRow(modifier = Modifier.fillMaxWidth()) {
 
-            items(categoriasAct) { categoriaAct ->
-                Image(
-                    painter = painterResource(id = categoriaAct.image),
-                    contentDescription = "",
-                    modifier = Modifier.size(64.dp),
-                    contentScale = ContentScale.Crop
-                )
+            item {
+                Box(modifier = Modifier
+                    .size(200.dp)
+                    .padding(16.dp)
+                    .background(Color.LightGray)) {
+                    Column(modifier = Modifier.padding(start = 6.dp)) {
+                        Text(text = categoriasAct[0].name, fontSize = 12.sp)
 
-                Column(modifier = Modifier.padding(start = 6.dp)) {
-                    Text(text = categoriaAct.name, fontSize = 12.sp)
+                        Image(
+                            painter = painterResource(id = categoriasAct[0].image),
+                            contentDescription = "",
+                            modifier = Modifier.size(64.dp),
+                            contentScale = ContentScale.Fit
+                        )
 
-                    Button(onClick = { navController.navigate("productitos") }) {
-                        Text("Comprar Aquí")
+                        Button(onClick = { navController.navigate("productitosUno") }) {
+                            Text("Comprar Aquí")
+                        }
                     }
                 }
+
+                Box(modifier = Modifier
+                    .size(200.dp)
+                    .padding(16.dp)
+                    .background(Color.LightGray)) {
+                    Column(modifier = Modifier.padding(start = 6.dp)) {
+                        Text(text = categoriasAct[1].name, fontSize = 12.sp)
+
+                        Image(
+                            painter = painterResource(id = categoriasAct[1].image),
+                            contentDescription = "",
+                            modifier = Modifier.size(64.dp),
+                            contentScale = ContentScale.Fit
+                        )
+
+                        Button(onClick = { navController.navigate("productitosDos") }) {
+                            Text("Comprar Aquí")
+                        }
+                    }
+                }
+
+                Box(modifier = Modifier
+                    .size(200.dp)
+                    .padding(16.dp)
+                    .background(Color.LightGray)) {
+                    Column(modifier = Modifier.padding(start = 6.dp)) {
+                        Text(text = categoriasAct[2].name, fontSize = 12.sp)
+
+                        Image(
+                            painter = painterResource(id = categoriasAct[2].image),
+                            contentDescription = "",
+                            modifier = Modifier.size(64.dp),
+                            contentScale = ContentScale.Fit
+                        )
+
+                        Button(onClick = { navController.navigate("productitosTres") }) {
+                            Text("Comprar Aquí")
+                        }
+                    }
+                }
+
+                Box(modifier = Modifier
+                    .size(200.dp)
+                    .padding(16.dp)
+                    .background(Color.LightGray)) {
+                    Column(modifier = Modifier.padding(start = 6.dp)) {
+                        Text(text = categoriasAct[3].name, fontSize = 12.sp)
+
+                        Image(
+                            painter = painterResource(id = categoriasAct[3].image),
+                            contentDescription = "",
+                            modifier = Modifier.size(64.dp),
+                            contentScale = ContentScale.Fit
+                        )
+
+                        Button(onClick = { navController.navigate("productitosCuatro") }) {
+                            Text("Comprar Aquí")
+                        }
+                    }
+                }
+
+                Box(modifier = Modifier
+                    .size(200.dp)
+                    .padding(16.dp)
+                    .background(Color.LightGray)) {
+                    Column(modifier = Modifier.padding(start = 6.dp)) {
+                        Text(text = categoriasAct[4].name, fontSize = 12.sp)
+
+                        Image(
+                            painter = painterResource(id = categoriasAct[4].image),
+                            contentDescription = "",
+                            modifier = Modifier.size(64.dp),
+                            contentScale = ContentScale.Fit
+                        )
+
+                        Button(onClick = { navController.navigate("productitosCinco") }) {
+                            Text("Comprar Aquí")
+                        }
+                    }
+                }
+
             }
+
         }
     }
 }

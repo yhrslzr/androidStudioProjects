@@ -64,7 +64,7 @@ fun GuardaditoProducto(preferencitas: GuardaditosPreferencitas, navController: N
             name = "Fondue de Chocolate Meta Knight",
             description = "fondue",
             price = 50.0f,
-            image = R.drawable.producto8fondue
+            image = R.drawable.producto2_1fondue
         ),
 
         ModeloGuardaditoT(
@@ -72,7 +72,7 @@ fun GuardaditoProducto(preferencitas: GuardaditosPreferencitas, navController: N
             name = "Sopa de Champiñon",
             description = "champisopa",
             price = 110.0f,
-            image = R.drawable.producto2sopa
+            image = R.drawable.producto1_2sopa
         ),
 
         ModeloGuardaditoT(
@@ -80,7 +80,7 @@ fun GuardaditoProducto(preferencitas: GuardaditosPreferencitas, navController: N
             name = "Pollo Teriyaki con Arroz Superestella",
             description = "teriyaki & arroz",
             price = 260.0f,
-            image = R.drawable.producto3platillo
+            image = R.drawable.producto1_3platillo
         ),
 
         ModeloGuardaditoT(
@@ -88,7 +88,7 @@ fun GuardaditoProducto(preferencitas: GuardaditosPreferencitas, navController: N
             name = "Pastel de la Princesa Peach",
             description = "pastel",
             price = 215.0f,
-            image = R.drawable.producto4pastel
+            image = R.drawable.producto1_4pastel
         ),
 
         ModeloGuardaditoT(
@@ -96,7 +96,7 @@ fun GuardaditoProducto(preferencitas: GuardaditosPreferencitas, navController: N
             name = "Tiramisú de Bloque ?",
             description = "tiramisu",
             price = 180.0f,
-            image = R.drawable.producto5tiramisu
+            image = R.drawable.producto1_5tiramisu
         ),
     )
 
