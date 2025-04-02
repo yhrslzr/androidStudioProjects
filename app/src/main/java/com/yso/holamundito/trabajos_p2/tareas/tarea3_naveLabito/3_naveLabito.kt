@@ -51,7 +51,7 @@ fun VistaLabitoT(navController: NavHostController) {
             label = { Text("Escribe tu ID Institucional") }
         )
 
-        Row {
+        Row(verticalAlignment = Alignment.CenterVertically) {
             Text("¿Eres Estudiante de ISND?")
             Checkbox(
                 checked = isISND,
