@@ -7,13 +7,13 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.yso.holamundito.trabajos_p2.datastore.VistaInfocita
-import com.yso.holamundito.trabajos_p2.listado.viewmodels.ModeloVistaEstudiantito
+import com.yso.holamundito.trabajos_p3.api.ViewModelPerrito
 import com.yso.holamundito.ui.theme.HolaMunditoTheme
 
 class MainActivity : ComponentActivity() {
@@ -24,11 +24,25 @@ class MainActivity : ComponentActivity() {
             HolaMunditoTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     //VistaCajitaTextito()
-                    Column(modifier = Modifier.padding(innerPadding)) {
+                    /*Column(modifier = Modifier.padding(innerPadding)) {
                         ModeloVistaEstudiantito()
-                        VistaInfocita()
+                        Vistanfocita()
 
+                    }*/
+
+                    /* ACTIVIDAD RETROFIT */
+                    Column(modifier = Modifier.padding(innerPadding)) {
+                        val viewModelPerrito = ViewModelPerrito()
+                        viewModelPerrito.mostrarImagenAleatoria()
+                        Text(text = "La url es ${viewModelPerrito.urlImage}")
+                        Button(onClick = {
+                            viewModelPerrito.mostrarImagenAleatoria()
+                        }) {
+                            Text(text = "Obtener Imagen")
+                        }
                     }
+
+
                 }
             }
         }
