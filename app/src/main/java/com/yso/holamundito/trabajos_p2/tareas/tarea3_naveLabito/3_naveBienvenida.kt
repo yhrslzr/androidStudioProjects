@@ -24,7 +24,7 @@ fun NavBienvenidaT() {
 
     val navController = rememberNavController()
 
-    NavHost(navController = navController, startDestination = "bienvenida") {
+    NavHost(navController = navController, startDestination = "persona") {
         composable("bienvenida") {
             BienvenidaT(navController)
         }

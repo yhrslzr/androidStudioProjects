@@ -35,7 +35,7 @@ fun NavGuardaditoInicioT() {
     val preferencias = GuardaditosPreferencitas(context)
 
     // Configuración de las rutas para la navegación
-    NavHost(navController = navController, startDestination = "inicio") {
+    NavHost(navController = navController, startDestination = "productitos") {
         composable("inicio") {
             VistaGuardaditoInicioT(navController, preferencias)
         }
