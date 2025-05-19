@@ -13,7 +13,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.yso.holamundito.trabajos_p3.api.ViewModelPerrito
+import com.yso.holamundito.trabajos_p3.api.iu.modelovista.ViewModelPerrito
 import com.yso.holamundito.ui.theme.HolaMunditoTheme
 
 class MainActivity : ComponentActivity() {

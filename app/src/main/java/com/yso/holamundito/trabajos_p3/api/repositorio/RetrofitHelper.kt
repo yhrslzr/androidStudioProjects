@@ -1,11 +1,11 @@
-package com.yso.holamundito.trabajos_p3.api
+package com.yso.holamundito.trabajos_p3.api.repositorio
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitHelper {
-    //Configurar retrofit , creamos el objeto retrofi
-    private const val URL_BASE = "https://dog.ceo/api/"
+    //Configurar retrofit , creamos el objeto retrofit
+    private val URL_BASE = "https://dog.ceo/api/"
 
     fun getRetrofitService(): InterfacitaAPI {
         val retrofit = Retrofit.Builder()
@@ -17,4 +17,3 @@ object RetrofitHelper {
         return service
     }
 }
-
